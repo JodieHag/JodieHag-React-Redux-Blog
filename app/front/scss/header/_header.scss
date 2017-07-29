@@ -1,0 +1,22 @@
+.header {
+  background: url('/img/bg.jpg');
+  background-size: cover;
+  > div {
+    background: url('/img/bg_cat.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.logo-min{
+  max-width: 100px;
+  max-height: 45px;
+}
+.navbar-color-on-scroll{
+  background-color: transparent;
+  background-image: url("/img/bg.jpg");
+}
+.navbar-transparent{
+  background-image: none;
+}
