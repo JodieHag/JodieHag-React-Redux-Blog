@@ -13,6 +13,9 @@ app.use(express.static(path.resolve(__dirname, '..', 'public')));
 app.get(['/', '/blog', '/cuentamecosas'], (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
 });
+app.get(['/googlec55d785e32c5e7f1.html'], (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'googlec55d785e32c5e7f1.html'));
+});
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use('/api', api);
