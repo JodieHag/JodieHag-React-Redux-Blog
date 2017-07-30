@@ -7,6 +7,8 @@ const path = require('path');
 const app = express();
 const api = require('./routes');
 
+app.set('port', (process.env.PORT || 3000));
+
 app.use(express.static(path.resolve(__dirname, '..', 'public')));
 app.get(['/', '/blog', '/cuentamecosas'], (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
