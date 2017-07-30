@@ -1,7 +1,7 @@
 {
-  "name": "apirest",
+  "name": "JodieHag",
   "version": "1.0.0",
-  "description": "Proyecto de Api RESTful con node.js, express y MongoDB",
+  "description": "Proyecto de Api RESTful con node.js, express y MongoDB, ReactJS, Redux",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -49,7 +49,9 @@
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
-    "url-loader": "^0.5.8"
+    "url-loader": "^0.5.8",
+    "nodemon": "^1.11.0",
+    "history": "^4.6.1"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -62,9 +64,7 @@
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "history": "^4.6.1",
     "html-loader": "^0.4.5",
-    "nodemon": "^1.11.0",
     "resolve-url-loader": "1.6.1",
     "react-hot-loader": "^3.0.0-beta.7",
     "webpack": "^2.3.1",
