@@ -26,6 +26,7 @@
     "express": "^4.15.3",
     "file-loader": "^0.11.1",
     "highlight.js": "^9.12.0",
+    "history": "^4.6.1",
     "imports-loader": "^0.7.1",
     "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
@@ -36,6 +37,7 @@
     "moment-timezone": "^0.5.13",
     "mongoose": "^4.10.4",
     "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
@@ -51,8 +53,7 @@
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
-    "nodemon": "^1.11.0",
-    "history": "^4.6.1"
+    "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0",
@@ -65,8 +66,8 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "html-loader": "^0.4.5",
-    "resolve-url-loader": "1.6.1",
     "react-hot-loader": "^3.0.0-beta.7",
+    "resolve-url-loader": "1.6.1",
     "webpack": "^2.3.1",
     "webpack-dev-server": "^2.4.2"
   }
