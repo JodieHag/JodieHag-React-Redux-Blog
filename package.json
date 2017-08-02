@@ -33,6 +33,7 @@
     "markdown-it": "^8.3.1",
     "markdown-it-loader": "^0.6.0",
     "marked": "^0.3.6",
+    "material-ui": "^0.18.7",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
     "mongoose": "^4.10.4",
@@ -41,6 +42,7 @@
     "path": "^0.12.7",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-markdown": "^2.5.0",
     "react-md-editor": "^0.2.2",
     "react-moment": "^0.2.4",
     "react-redux": "^5.0.5",
@@ -51,6 +53,7 @@
     "redux-promise-middleware": "^4.3.0",
     "redux-thunk": "^2.2.0",
     "sass-loader": "^6.0.5",
+    "slugify": "^1.1.0",
     "style-loader": "^0.18.1",
     "url-loader": "^0.5.8",
     "webpack-merge": "^4.1.0"

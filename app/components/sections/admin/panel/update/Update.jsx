@@ -35,7 +35,7 @@ class Update extends React.Component {
   }
 
   render() {
-    const { post, editMode, id, update_post, borrarAlert } = this.props;
+    const { post, editMode, update_post, borrarAlert, updated } = this.props;
     return (
       <div className="section-update">
         <hr />
@@ -68,7 +68,7 @@ class Update extends React.Component {
               stripedRows={false}
             >
               {post.map((item, index) => (
-                <TableRow key={item._id}>
+                <TableRow key={item._id} disabled={!updated}>
                   <TableRowColumn>{item.title}</TableRowColumn>
                   <TableRowColumn>
                     <Toggle
@@ -84,7 +84,7 @@ class Update extends React.Component {
                       label="Modificar"
                       primary
                       fullWidth
-                      onClick={this.props.onUpdate.bind(this, item._id)}
+                      onClick={this.props.onUpdate.bind(this, item.url)}
                     />
                   </TableRowColumn>
                   <TableRowColumn>
@@ -92,7 +92,7 @@ class Update extends React.Component {
                       label="Eliminar"
                       secondary
                       fullWidth
-                      onClick={this.props.showAlert.bind(this, item._id)}
+                      onClick={this.props.showAlert.bind(this, item.url)}
                     />
                   </TableRowColumn>
                 </TableRow>

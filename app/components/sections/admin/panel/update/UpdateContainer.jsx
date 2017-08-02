@@ -11,6 +11,7 @@ class UpdateContainer extends React.Component {
 
     this.state = {
       id: '',
+      url: '',
       editMode: false,
       toggle: false,
       borrarAlert: false
@@ -30,8 +31,10 @@ class UpdateContainer extends React.Component {
     this.showAlert = this.showAlert.bind(this);
     this.hideAlert = this.hideAlert.bind(this);
   }
-  onUpdate(id) {
-    this.props.dispatch(getPost({ id }));
+
+  onUpdate(url) {
+    this.props.dispatch(getPost({ url }));
+
     this.setState({
       editMode: true
     });
@@ -44,17 +47,24 @@ class UpdateContainer extends React.Component {
   }
 
   onDelete(id) {
-    this.props.dispatch(deletePost({ id }));
+    const { dispatch, posts } = this.props;
+
+    console.log(this.state);
+
+    dispatch(deletePost({ id }));
+    dispatch(loadPosts({ posts }));
     this.setState({
       borrarAlert: false
     });
   }
-  showAlert(id) {
-    this.props.dispatch(getPost({ id }));
+
+  showAlert(url) {
+    this.props.dispatch(getPost({ url }));
     this.setState({
       borrarAlert: true
     });
   }
+
   hideAlert() {
     this.setState({
       borrarAlert: false
@@ -71,7 +81,8 @@ class UpdateContainer extends React.Component {
       picture: posts.update_post.picture,
       category: posts.update_post.category,
       postit: posts.update_post.postit,
-      _id: posts.update_post._id
+      _id: posts.update_post._id,
+      url: posts.update_post.url
     }));
 
     this.setState({
@@ -90,7 +101,8 @@ class UpdateContainer extends React.Component {
         picture: posts.update_post.picture,
         contentPost: posts.update_post.contentPost,
         category: posts.update_post.category,
-        _id: posts.update_post._id
+        _id: posts.update_post._id,
+        url: posts.update_post.url
       }
     }));
   }
@@ -105,7 +117,8 @@ class UpdateContainer extends React.Component {
         picture: posts.update_post.picture,
         contentPost: posts.update_post.contentPost,
         category: posts.update_post.category,
-        _id: posts.update_post._id
+        _id: posts.update_post._id,
+        url: posts.update_post.url
       }
     }));
   }
@@ -135,7 +148,8 @@ class UpdateContainer extends React.Component {
         postit: posts.update_post.postit,
         contentPost: posts.update_post.contentPost,
         category: posts.update_post.category,
-        _id: posts.update_post._id
+        _id: posts.update_post._id,
+        url: posts.update_post.url
       }
     }));
   }
@@ -150,7 +164,8 @@ class UpdateContainer extends React.Component {
         title: posts.update_post.title,
         postit: posts.update_post.postit,
         category: posts.update_post.category,
-        _id: posts.update_post._id
+        _id: posts.update_post._id,
+        url: posts.update_post.url
       }
     }));
   }
@@ -165,7 +180,8 @@ class UpdateContainer extends React.Component {
         description: posts.update_post.description,
         title: posts.update_post.title,
         postit: posts.update_post.postit,
-        _id: posts.update_post._id
+        _id: posts.update_post._id,
+        url: posts.update_post.url
       }
     }));
   }
@@ -177,7 +193,6 @@ class UpdateContainer extends React.Component {
         post={posts.post}
         update_post={posts.update_post}
         onUpdate={this.onUpdate}
-        id={this.state.id}
         editMode={this.state.editMode}
         borrarAlert={this.state.borrarAlert}
         onCancel={this.onCancel}
@@ -192,12 +207,13 @@ class UpdateContainer extends React.Component {
         onDelete={this.onDelete}
         showAlert={this.showAlert}
         hideAlert={this.hideAlert}
+        updated={posts.updated}
+        updating={posts.updating}
       />
     );
   }
 }
 
 export default connect(state => ({
-  posts: state.posts,
-  common: state.common
+  posts: state.posts
 }))(UpdateContainer);

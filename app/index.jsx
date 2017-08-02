@@ -11,7 +11,13 @@ import BlogContainer from './components/sections/blog/BlogContainer';
 import Post from './components/sections/blog/post/Post';
 import AdminContainer from './components/sections/admin/AdminContainer';
 
+import { getPost } from './actions/blogActions';
+
 injectTapEventPlugin();
+
+const onPostEnter = (nextState) => {
+  configureStore.dispatch(getPost(nextState.params.url));
+};
 
 export default class App extends React.Component {
   render() {
@@ -22,7 +28,7 @@ export default class App extends React.Component {
             <Route path="/" component={AppContainer}>
               <Route path="cuentamecosas" component={AdminContainer} />
               <Route path="blog" component={BlogContainer} />
-              <Route path="blog/:post_name" component={Post} />
+              <Route path="blog/:url" component={Post} onEnter={onPostEnter} />
             </Route>
           </Router>
         </Provider>

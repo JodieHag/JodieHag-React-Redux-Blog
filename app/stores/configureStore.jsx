@@ -11,6 +11,7 @@ export default createStore(reducers, {
     updating: false,
     updated: false,
     adding: false,
+    added: false,
     deleting: false,
     updatingPost: false,
     categories: ['Develop', 'Angy', 'Vagine'],
@@ -22,9 +23,5 @@ export default createStore(reducers, {
     userName: '',
     password: '',
     errors: ''
-  },
-  common: {
-    loading: false,
-    loaded: false
   }
 }, middleware);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-import { addPost } from '../../../../../actions/blogActions';
+import slugify from 'slugify';
+import { addPost, updateStatePosts } from '../../../../../actions/blogActions';
 import Add from './Add';
 
 class AddContainer extends React.Component {
@@ -15,8 +15,11 @@ class AddContainer extends React.Component {
       img: '/img/image_blank.jpg',
       code: '# Your post in here',
       category: 'Vagine',
-      postit: true
+      postit: true,
+      url: ''
     };
+
+    this.onRefreshAdd = this.onRefreshAdd.bind(this);
     this.updateCode = this.updateCode.bind(this);
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleChangeCategory = this.handleChangeCategory.bind(this);
@@ -24,9 +27,16 @@ class AddContainer extends React.Component {
     this.onSave = this.onSave.bind(this);
   }
 
+  onRefreshAdd() {
+    const { dispatch } = this.props;
+
+    dispatch(updateStatePosts({ added: false }));
+  }
   handleChangeTitle(event) {
+    const slugy = slugify(event.target.value);
     this.setState({
-      title: event.target.value
+      title: event.target.value,
+      url: slugy
     });
   }
 
@@ -65,7 +75,8 @@ class AddContainer extends React.Component {
       contentPost: this.state.code,
       picture: this.state.img,
       category: this.state.category,
-      postit: this.state.postit
+      postit: this.state.postit,
+      url: this.state.url
     }));
   }
   render() {
@@ -86,6 +97,9 @@ class AddContainer extends React.Component {
         content={code}
         category={category}
         postIt={postit}
+        updating={posts.updating}
+        added={posts.added}
+        onRefreshAdd={this.onRefreshAdd}
       />
     );
   }
