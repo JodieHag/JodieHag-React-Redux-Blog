@@ -2,11 +2,10 @@ import React from 'react';
 import FontIcon from 'material-ui/FontIcon';
 import { connect } from 'react-redux';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
-import { updateStatePosts } from '../../../../../actions/blogActions';
+import { updateStatePosts, loadPosts } from '../../../../../actions/blogActions';
 
 const addPost = <FontIcon className="material-icons">add</FontIcon>;
 const updatePost = <FontIcon className="material-icons">update</FontIcon>;
-const deletePost = <FontIcon className="material-icons">delete</FontIcon>;
 
 class SidebarMenu extends React.Component {
   constructor() {
@@ -14,7 +13,7 @@ class SidebarMenu extends React.Component {
     this.state = {
       selectedIndex: 0,
       deleting: false,
-      adding: false,
+      adding: true,
       updatingPost: false
     };
   }
@@ -26,25 +25,17 @@ class SidebarMenu extends React.Component {
       case index = 0:
         this.setState({
             adding: true,
-            updatingPost: false,
-            deleting: false
+            updatingPost: false
           }
         );
 
         break;
       case index = 1:
+        const { posts } = this.props;
+        dispatch(loadPosts({ posts }));
         this.setState({
             adding: false,
-            updatingPost: true,
-            deleting: false
-          }
-        );
-        break;
-      case index = 2:
-        this.setState({
-            adding: false,
-            updatingPost: false,
-            deleting: true
+            updatingPost: true
           }
         );
         break;
@@ -54,10 +45,10 @@ class SidebarMenu extends React.Component {
   }
 
   updateState() {
-    this.props.dispatch(updateStatePosts({
+    const { dispatch } = this.props;
+    dispatch(updateStatePosts({
       adding: this.state.adding,
-      updatingPost: this.state.updatingPost,
-      deleting: this.state.deleting
+      updatingPost: this.state.updatingPost
     }));
   }
 

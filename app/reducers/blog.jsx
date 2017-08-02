@@ -25,13 +25,14 @@ export default function reducer(state = {}, action) {
 
     case `${ADD_POST}_PENDING`:
       return $.extend({}, state, {
-        updating: true
+        updating: true,
+        added: false
       });
 
     case `${ADD_POST}_FULFILLED`:
       return $.extend({}, state, {
         updating: false,
-        updated: true
+        added: true
       });
 
     case `${LOAD_POSTS}_REJECT`:
@@ -50,7 +51,7 @@ export default function reducer(state = {}, action) {
       return $.extend({}, state, {
         updating: false,
         updated: true,
-        update_post: action.payload.data.post
+        update_post: action.payload.data.post[0]
       });
 
     case `${UPDATE_POST}_PENDING`:

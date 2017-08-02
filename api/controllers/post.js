@@ -3,9 +3,9 @@
 const Post = require('../models/post');
 
 function getPost (req, res) {
-  let postId = req.params.postId;
+  let url = req.params.url;
 
-  Post.findById(postId, (err, post) => {
+  Post.find({url: url}, (err, post) => {
     if (err) rest.status(500).send({ message: `Error al realizar la petición: ${err}` });
     if (!post) return res.status(404).send({ message: `El post no existe` });
 
@@ -27,6 +27,7 @@ function savePost(req, res) {
 
   let post = new Post();
   post.title = req.body.title;
+  post.url = req.body.url;
   post.picture = req.body.picture;
   post.description = req.body.description;
   post.contentPost = req.body.contentPost;

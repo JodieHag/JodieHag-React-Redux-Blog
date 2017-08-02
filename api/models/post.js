@@ -14,7 +14,8 @@ const PostSchema = Schema({
   },
   date: { type: Date, default: Date.now() },
   postit: Boolean,
-  views: Number
+  views: Number,
+  url: String
 });
 
 module.exports = mongoose.model('Post', PostSchema);

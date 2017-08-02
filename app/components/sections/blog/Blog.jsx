@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Moment from 'react-moment';
+import Post from './post/Post';
 
 class Blog extends React.Component {
 
   render() {
-    const {posts} = this.props;
+    const { posts } = this.props;
     return (
       <div className="main main-raised">
         <div className="section">
@@ -14,11 +15,11 @@ class Blog extends React.Component {
               {posts.post.map(post => (
                 <div className="post-item">
                   {post.postit ?
-                    <div className="col-md-4 col-sm-6 post-item__box" key={post.id}>
+                    <div className="col-md-4 col-sm-6 post-item__box" key={post._id}>
                       <div className="post card card-signup">
                         <div className="post__header">
                           <div className="post__info header text-center">
-                            <Link to={`/blog/${post.title}`} className="full-container-link">
+                            <Link to={`/blog/${post.url}`} className="full-container-link">
                               <h3 className="post__title text-white">{post.title}</h3>
                             </Link>
                           </div>

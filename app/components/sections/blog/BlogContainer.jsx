@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { loadPosts } from '../../../actions/blogActions.jsx';
-import Blog from './Blog.jsx';
+import { loadPosts } from '../../../actions/blogActions';
+import Blog from './Blog';
 
 class BlogContainer extends React.Component {
   constructor(props) {

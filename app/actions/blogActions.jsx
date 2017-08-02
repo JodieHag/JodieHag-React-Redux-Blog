@@ -30,11 +30,11 @@ export function addPost(data) {
   };
 }
 
-export function getPost(id) {
+export function getPost(url) {
   return {
     type: GET_POST,
     payload: {
-      promise: axios.get(`/api/post/${id.id}`)
+      promise: axios.get(`/api/post/${url.url}`)
     }
   };
 }

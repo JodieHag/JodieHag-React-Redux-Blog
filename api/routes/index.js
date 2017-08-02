@@ -7,7 +7,7 @@ const PostCntrls = require('../controllers/post');
 const UserCntrls = require('../controllers/users');
 
 api.get('/post', PostCntrls.getPosts);
-api.get('/post/:postId', PostCntrls.getPost);
+api.get('/post/:url', PostCntrls.getPost);
 api.post('/post', PostCntrls.savePost);
 api.put('/post/:postId', PostCntrls.updatePost);
 api.delete('/post/:postId', PostCntrls.deletePost);
