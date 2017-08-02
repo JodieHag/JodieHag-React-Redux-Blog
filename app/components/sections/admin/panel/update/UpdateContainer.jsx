@@ -48,9 +48,6 @@ class UpdateContainer extends React.Component {
 
   onDelete(id) {
     const { dispatch, posts } = this.props;
-
-    console.log(this.state);
-
     dispatch(deletePost({ id }));
     dispatch(loadPosts({ posts }));
     this.setState({

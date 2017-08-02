@@ -31,7 +31,7 @@ class SidebarMenu extends React.Component {
 
         break;
       case index = 1:
-        const { posts } = this.props;
+        const { posts, dispatch } = this.props;
         dispatch(loadPosts({ posts }));
         this.setState({
             adding: false,
