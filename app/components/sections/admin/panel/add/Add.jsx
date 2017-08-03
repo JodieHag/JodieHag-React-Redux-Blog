@@ -33,7 +33,9 @@ class Add extends React.Component {
       },
       refresh: {
         display: 'inline-block',
-        position: 'relative'
+        position: 'relative',
+        left: '0',
+        top: '0'
       }
     };
     return (

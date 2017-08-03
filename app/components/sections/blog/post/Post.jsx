@@ -20,15 +20,18 @@ class Post extends React.Component {
       <div className="main main-raised">
         <div className="section">
           <div className="section-single-post">
-            <Link to="/blog" className="btn-link"><i className="fa fa-arrow-left" /> Volver atrás</Link>
             <div className="container">
-              <div className="section-single-post__title">
-                <h1>{post.title}</h1>
-              </div>
-              <div
-                className="section-single-post__body"
-              >
-                <Markdown source={post.contentPost} />
+              <div className="col-md-8 col-md-offset-2">
+                <Link to="/blog" className="btn-link"><i className="fa fa-arrow-left" /> Volver atrás</Link>
+                <div className="section-single-post__title">
+                  <h1>{post.title}</h1>
+                </div>
+                <hr />
+                <div
+                  className="section-single-post__body"
+                >
+                  <Markdown source={post.contentPost} />
+                </div>
               </div>
             </div>
           </div>
