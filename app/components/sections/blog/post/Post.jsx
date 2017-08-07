@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import Markdown from 'react-markdown';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { FacebookButton, FacebookCount } from 'react-social';
 
 import { getPost } from '../../../../actions/blogActions';
 
@@ -26,6 +28,10 @@ class Post extends React.Component {
                 <div className="section-single-post__title">
                   <h1>{post.title}</h1>
                 </div>
+                <FacebookButton url={post.url} appId>
+                  <FacebookCount url={post.url} />
+                  {' Share ' + post.url}
+                </FacebookButton>
                 <hr />
                 <div
                   className="section-single-post__body"
@@ -44,3 +50,15 @@ class Post extends React.Component {
 export default connect(state => ({
   posts: state.posts
 }))(Post);
+
+Post.propTypes = {
+  posts: PropTypes.object,
+  dispatch: PropTypes.func,
+  params: PropTypes.string
+};
+
+Post.defaultProps = {
+  posts: {},
+  dispatch: null,
+  params: ''
+};

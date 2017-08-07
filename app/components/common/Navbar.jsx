@@ -10,11 +10,17 @@ class Navbar extends React.Component {
           <div className="navbar-header">
             <button
               type="button"
-              className="navbar-toggle"
+              className="navbar-toggle collapsed"
               data-toggle="collapse"
               data-target="#navigation-index"
-            />
-            <a href="http://wwww.jodiehag.com">
+              aria-expanded="false"
+            >
+              <span className="sr-only">Toggle navigation</span>
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+            </button>
+            <a className="navbar-brand" href="http://wwww.jodiehag.com">
               <div className="logo-container">
                 <div className="logo">
                   <img
@@ -30,8 +36,8 @@ class Navbar extends React.Component {
               </div>
             </a>
           </div>
-          <div className="collapse navbar-collapse">
-            <ul className="nav navbar-nav navbar-right" id="navigation-index">
+          <div className="navbar-collapse collapse" id="navigation-index">
+            <ul className="nav navbar-nav navbar-right">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/blog">Blog</Link></li>
             </ul>

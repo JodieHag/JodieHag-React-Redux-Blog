@@ -3,10 +3,6 @@ import { Link } from 'react-router';
 
 class Footer extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <footer className="footer">
@@ -30,13 +26,13 @@ class Footer extends React.Component {
               </li>
             </ul>
           </nav>
-	        <div className="copyright pull-right">
-	          &copy; 2017, made with
+          <div className="copyright pull-right">
+            &copy; 2017, made with
             <Link to={'/admin'} className="">
               <i className="material-icons">favorite</i>
             </Link>
              by JodieHag.
-	        </div>
+           </div>
         </div>
       </footer>
 

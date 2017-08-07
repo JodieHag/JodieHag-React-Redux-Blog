@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Header from './common/Header.jsx';
-import Navbar from './common/Navbar.jsx';
-import Footer from './common/Footer.jsx';
+import Header from './common/Header';
+import Navbar from './common/Navbar';
+import Footer from './common/Footer';
 
 require('../front/scss/App.scss');
 
@@ -18,8 +17,8 @@ class AppContainer extends React.Component {
         <div className="wrapper">
           <Header />
             {this.props.children}
-          <Footer />
         </div>
+        <Footer />
       </div>
     );
   }

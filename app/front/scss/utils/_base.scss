@@ -19,7 +19,9 @@ h6{
 p{
   font-size: $p;
 }
-
+.primary{
+  background-color: $primary_brand !important;
+}
 
 .text-white {
   color: $white;
