@@ -1,4 +1,7 @@
 .post-item{
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
   &__box{
     margin: 35px 0;
   }

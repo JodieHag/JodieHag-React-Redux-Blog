@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Moment from 'react-moment';
 import slugify from 'slugify';
 import { addPost, updateStatePosts } from '../../../../../actions/blogActions';
 import Add from './Add';
@@ -14,13 +15,14 @@ class AddContainer extends React.Component {
       description: '',
       img: '/img/image_blank.jpg',
       code: '# Your post in here',
-      category: 'Vagine',
+      category: 'Developer',
       postit: true,
       url: ''
     };
 
     this.onRefreshAdd = this.onRefreshAdd.bind(this);
     this.updateCode = this.updateCode.bind(this);
+    this.handleChangeDescription = this.handleChangeDescription.bind(this);
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
     this.handleChangeCategory = this.handleChangeCategory.bind(this);
     this.handleChangePostIt = this.handleChangePostIt.bind(this);
@@ -76,7 +78,8 @@ class AddContainer extends React.Component {
       picture: this.state.img,
       category: this.state.category,
       postit: this.state.postit,
-      url: this.state.url
+      url: this.state.url,
+      date: new Date()
     }));
   }
   render() {
@@ -87,6 +90,7 @@ class AddContainer extends React.Component {
         post={posts.post}
         status={posts}
         onSave={this.onSave}
+        changeDescription={this.handleChangeDescription}
         changeTitle={this.handleChangeTitle}
         updateCode={this.updateCode}
         changeCategory={this.handleChangeCategory}

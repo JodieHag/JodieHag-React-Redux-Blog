@@ -14,7 +14,8 @@ export default createStore(reducers, {
     added: false,
     deleting: false,
     updatingPost: false,
-    categories: ['Develop', 'Angy', 'Vagine'],
+    category: 'all',
+    categories: ['Developer', 'Human Error', 'Feminist', 'Traveling'],
     update_post: {}
   },
   users: {

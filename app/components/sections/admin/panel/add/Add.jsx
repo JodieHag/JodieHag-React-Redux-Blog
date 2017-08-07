@@ -18,6 +18,7 @@ class Add extends React.Component {
 
     this.onRefreshAdd = this.props.onRefreshAdd.bind(this);
     this.changeTitle = this.props.changeTitle.bind(this);
+    this.changeDescription = this.props.changeDescription.bind(this);
     this.changeCategory = this.props.changeCategory.bind(this);
     this.changePostIt = this.props.changePostIt.bind(this);
     this.updateCode = this.props.updateCode.bind(this);
@@ -25,15 +26,18 @@ class Add extends React.Component {
   }
 
   render() {
-    const { title, img, content, category, postIt, updating, added } = this.props;
+    const { title, img, content, category, postIt, updating, added, status } = this.props;
     const preview = marked(content);
+    const categories = status.categories;
     const style = {
       container: {
         position: 'relative'
       },
       refresh: {
         display: 'inline-block',
-        position: 'relative'
+        position: 'relative',
+        left: '0',
+        top: '0'
       }
     };
     return (
@@ -74,7 +78,7 @@ class Add extends React.Component {
                   <div className="col-md-6">
                     <div className="form-group">
                       <label htmlFor="description">Mini descripción:</label>
-                      <textarea className="form-control" rows="3" id="description" placeholder="Añade tu descripción aquí" />
+                      <textarea className="form-control" rows="3" id="description" placeholder="Añade tu descripción aquí" onChange={this.changeDescription} />
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -125,18 +129,14 @@ class Add extends React.Component {
                       openImmediately
                       autoWidth={false}
                     >
-                      <MenuItem
-                        value="Vagine"
-                        primaryText="Vagine"
-                      />
-                      <MenuItem
-                        value="Angry"
-                        primaryText="Angry"
-                      />
-                      <MenuItem
-                        value="Developer"
-                        primaryText="Developer"
-                      />
+                      {categories.map(categorie =>
+                        (
+                          <MenuItem
+                            value={categorie}
+                            primaryText={categorie}
+                          />
+                        )
+                        )}
                     </DropDownMenu>
                   </div>
                 </div>
@@ -164,6 +164,7 @@ export default Add;
 
 Add.propTypes = {
   changeTitle: React.PropTypes.func.isRequired,
+  changeDescription: React.PropTypes.func.isRequired,
   changeCategory: React.PropTypes.func.isRequired,
   changePostIt: React.PropTypes.func.isRequired,
   updateCode: React.PropTypes.func.isRequired,

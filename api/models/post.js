@@ -1,8 +1,6 @@
-'use strict'
-
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
+const Schema = mongoose.Schema;
 const PostSchema = Schema({
   title: String,
   picture: String,
@@ -10,9 +8,11 @@ const PostSchema = Schema({
   contentPost: String,
   category: {
     type: String,
-    enum: ['Vagine', 'Angry', 'Developer']
+    enum: ['Developer', 'Human Error', 'Feminist', 'Traveling']
   },
-  date: { type: Date, default: Date.now() },
+  date: {
+    type: Date
+  },
   postit: Boolean,
   views: Number,
   url: String
