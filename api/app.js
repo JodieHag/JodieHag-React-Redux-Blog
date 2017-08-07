@@ -17,8 +17,8 @@ app.get(['/blog/:url'], (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'index.html'));
 });
 
-app.get(['/googlec55d785e32c5e7f1.html'], (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'public', 'googlec55d785e32c5e7f1.html'));
+app.get(['/googleb302cf1e3da86ccc.html'], (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'public', '/googleb302cf1e3da86ccc.html'));
 });
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
