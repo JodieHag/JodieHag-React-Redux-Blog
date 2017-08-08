@@ -3,7 +3,6 @@ import { Link } from 'react-router';
 import Markdown from 'react-markdown';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { FacebookButton, FacebookCount } from 'react-social';
 
 import { getPost } from '../../../../actions/blogActions';
 
@@ -28,10 +27,6 @@ class Post extends React.Component {
                 <div className="section-single-post__title">
                   <h1>{post.title}</h1>
                 </div>
-                <FacebookButton url={post.url} appId>
-                  <FacebookCount url={post.url} />
-                  {' Share ' + post.url}
-                </FacebookButton>
                 <hr />
                 <div
                   className="section-single-post__body"
