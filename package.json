@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "webpack -d --watch",
+    "dev": "webpack --env='dev' -d --watch",
+    "prop" :"webpack --env='pro' -d --watch",
     "load": "webpack-dev-server --open",
     "build": "webpack -p",
     "lint": "eslint ./app",
