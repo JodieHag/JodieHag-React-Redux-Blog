@@ -5,7 +5,7 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <nav className="navbar navbar-fixed-top navbar-color-on-scroll">
+      <nav className="navbar navbar-fixed-top navbar-color-on-scroll navbar-transparent">
         <div className="container">
           <div className="navbar-header">
             <button
