@@ -1,0 +1,18 @@
+/* ======================================================================
+	  Fonts Face
+	======================================================================== */
+
+
+@font-face {
+  font-family: 'OCRAExtended';
+  src: url('/fonts/OCRAExtended.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OCRAExtended';
+  src: url('/fonts/OCRAExtended.ttf')  format('truetype'), url('/fonts/OCRAExtended.svg#OCRAExtended') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

@@ -1,17 +1,17 @@
-.post{
+.post {
   &__title {
-    font-size: 22px;
+    font: 22px/24px 'OCRAExtended';
   }
-  &__body{
+  &__body {
     padding: 15px;
   }
 }
 
-.post-item{
+.post-item {
   @media (max-width: 768px) {
     padding: 10px 0;
   }
-  &__box{
+  &__box {
     margin: 35px 0;
   }
 }

@@ -6,11 +6,20 @@ class Header extends React.Component {
     return (
       <div className="header header-filtrer">
         <div className="container">
+        <div id="space">
+          <div className="stars"></div>
+          <div className="stars"></div>
+          <div className="stars"></div>
+          <div className="stars"></div>
+          <div className="stars"></div>
+          <div className="stars"></div>
+          <div className="stars"></div>
+        </div>
           <div className="row">
             <div className="col-md-8 col-md-offset-2">
               <div className="brand">
                 <h1>Jodie Hag</h1>
-                <h3>FrontEnd Developer Womb</h3>
+                <h3>FrontEnd Developer Freelance</h3>
               </div>
             </div>
           </div>
