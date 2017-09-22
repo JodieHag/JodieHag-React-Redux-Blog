@@ -6,15 +6,15 @@ class Header extends React.Component {
     return (
       <div className="header header-filtrer">
         <div className="container">
-        <div id="space">
-          <div className="stars"></div>
-          <div className="stars"></div>
-          <div className="stars"></div>
-          <div className="stars"></div>
-          <div className="stars"></div>
-          <div className="stars"></div>
-          <div className="stars"></div>
-        </div>
+          <div id="space">
+            <div className="stars" />
+            <div className="stars" />
+            <div className="stars" />
+            <div className="stars" />
+            <div className="stars" />
+            <div className="stars" />
+            <div className="stars" />
+          </div>
           <div className="row">
             <div className="col-md-8 col-md-offset-2">
               <div className="brand">

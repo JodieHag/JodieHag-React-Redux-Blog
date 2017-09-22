@@ -7,6 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import configureStore from './stores/configureStore';
 
 import AppContainer from './components/AppContainer';
+import PortfolioContainer from './components/sections/portfolio/PortfolioContainer';
 import BlogContainer from './components/sections/blog/BlogContainer';
 import Post from './components/sections/blog/post/Post';
 import AdminContainer from './components/sections/admin/AdminContainer';
@@ -29,6 +30,7 @@ export default class App extends React.Component {
               <Route path="cuentamecosas" component={AdminContainer} />
               <Route path="blog" component={BlogContainer} />
               <Route path="blog/:url" component={Post} onEnter={onPostEnter} />
+              <Route path="work" component={PortfolioContainer} />
             </Route>
           </Router>
         </Provider>
