@@ -1,12 +1,7 @@
 .header {
   background: url('/img/bg.jpg');
   background-size: cover;
-  > div {
-    background: url('/img/bg_cat.png');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
+
   .brand {
     h1 {
       font-family: 'OCRAExtended';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+// <li><Link to="/blog">Blog</Link></li>
 class Navbar extends React.Component {
 
   render() {
@@ -39,7 +39,7 @@ class Navbar extends React.Component {
           <div className="navbar-collapse collapse" id="navigation-index">
             <ul className="nav navbar-nav navbar-right">
               <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/work">Work</Link></li>
             </ul>
           </div>
         </div>
