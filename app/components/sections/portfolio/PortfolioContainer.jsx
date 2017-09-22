@@ -38,10 +38,6 @@ class PortfolioContainer extends React.Component {
           alt: 'KitKat'
         },
         {
-          src: 'https://cofounderslab.com/img/logo/blue.png',
-          alt: 'CofoundersLab'
-        },
-        {
           src: 'http://logonoid.com/images/granini-logo.png',
           alt: 'Granini'
         },

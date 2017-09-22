@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-
+// <li><Link to="/blog">Blog</Link></li>
 class Navbar extends React.Component {
 
   render() {
@@ -40,7 +40,6 @@ class Navbar extends React.Component {
             <ul className="nav navbar-nav navbar-right">
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/work">Work</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
             </ul>
           </div>
         </div>
