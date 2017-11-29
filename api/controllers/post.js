@@ -37,7 +37,7 @@ function savePost(req, res) {
   post.likes = req.body.likes;
   post.views = req.body.views;
 
-  post.save((err, postStore) =>{
+  post.save((err, postStore) => {
     if (err) res.status(500).send({message: `Error al guardar el post: ${err}.`});
 
     res.status(200).send({post: postStore});

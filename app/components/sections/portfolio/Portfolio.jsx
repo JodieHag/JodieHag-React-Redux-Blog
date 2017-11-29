@@ -39,11 +39,14 @@ class Portfolio extends React.Component {
                             <a href="https://berepublic.com/" rel="noopener noreferrer" target="_blank">
                               <img src="/img/clients/berepublic2.svg" alt="BeRepublic" />
                             </a>
-                            <a href="http://market-control.com/" rel="noopener noreferrer" target="_blank">
+                            <a href="http://market-control.com/" rel="noopener noreferrer" target="_blank" width="150">
                               <img src="/img/clients/marketcontrol.png" alt="MarketControl" />
                             </a>
                             <a href="http://www.cofounderslab.com/" rel="noopener noreferrer" target="_blank">
                               <img src="/img/clients/cofounders.png" alt="CofoundersLab" />
+                            </a>
+                            <a href="http://medoxapp.com" rel="noopener noreferrer" target="_blank">
+                              <img src="/img/clients/medox.svg" alt="CofoundersLab" />
                             </a>
                           </div>
                         </div>
