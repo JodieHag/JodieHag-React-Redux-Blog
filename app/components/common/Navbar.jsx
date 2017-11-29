@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class Navbar extends React.Component {
-
   render() {
     return (
       <nav className="navbar navbar-fixed-top navbar-color-on-scroll navbar-transparent">
