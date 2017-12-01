@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon index.js",
     "dev": "webpack --env='dev' -d --watch",
-    "prop": "webpack --env='pro' -d --watch",
+    "pro": "webpack --env='prod' --optimize-minimize",
     "load": "webpack-dev-server --open",
     "build": "webpack -p",
     "lint": "eslint ./app",
