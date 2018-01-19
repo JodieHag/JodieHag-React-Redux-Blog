@@ -1,46 +1,41 @@
-severity: error
+options:
+  # Don't merge default rules
+  merge-default-rules: false
 
-linters:
+# Rule Configuration
+rules:
+  extends-before-mixins: 2
+  extends-before-declarations: 2
+  placeholder-in-extend: 2
+  mixins-before-declarations:
+    - 2
+    -
+      exclude:
+        - breakpoint
+        - mq
 
-  BorderZero:
-    enabled: true
-    convention: zero
-
-  BemDepth:
-    enabled: true
-
-  DeclarationOrder:
-    enabled: false
-
-  ExtendDirective:
-    enabled: true
-
-  LeadingZero:
-    enabled: false
-
-  NameFormat:
-    enabled: true
-
-  PrivateNamingConvention:
-    enabled: true
-    prefix: _
-
-  PropertySortOrder:
-    enabled: false
-
-  QualifyingElement:
-    enabled: false
-
-  SelectorFormat:
-    enabled: true
-    convention: hyphenated_BEM
-    class_convention: ^(?!js-).*
-    class_convention_explanation: should not be written in the form js-*
-
-  SingleLinePerProperty:
-    enabled: true
-    allow_single_line_rule_sets: false
-
-  StringQuotes:
-    enabled: true
-    style: double_quotes
+  no-warn: 1
+  no-debug: 1
+  no-ids: 2
+  no-important: 2
+  hex-notation:
+    - 2
+    -
+      style: uppercase
+  indentation:
+    - 2
+    -
+      size: 2
+  property-sort-order:
+    - 1
+    -
+      order:
+        - display
+        - margin
+      ignore-custom-properties: true
+  variable-for-property:
+    - 2
+    -
+      properties:
+        - margin
+        - content

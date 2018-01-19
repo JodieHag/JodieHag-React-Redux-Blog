@@ -1,49 +1,59 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Logo from '../../static/img/logo.png';
+import Header from './Header';
+import Background from '../../static/img/background.png';
 
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    // SIDENAV
+    $('.button-collapse').sideNav();
+  }
+
   render() {
+    const { header } = this.props;
     return (
-      <nav className="navbar navbar-fixed-top navbar-color-on-scroll navbar-transparent">
-        <div className="container">
-          <div className="navbar-header">
-            <button
-              type="button"
-              className="navbar-toggle collapsed"
-              data-toggle="collapse"
-              data-target="#navigation-index"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-              <span className="icon-bar" />
-            </button>
-            <a className="navbar-brand" href="http://wwww.jodiehag.com">
-              <div className="logo-container">
-                <div className="logo">
-                  <img
-                    src="/img/logo.png"
-                    alt="JodieHag"
-                    rel="tooltip"
-                    data-html="true"
-                    title="<b>JodieHag</b> is a FrontEnd Developer Womb"
-                    data-placement="bottom"
-                    className="logo-min"
-                  />
-                </div>
-              </div>
-            </a>
-          </div>
-          <div className="navbar-collapse collapse" id="navigation-index">
-            <ul className="nav navbar-nav navbar-right">
-              <li><Link to="/">Inicio</Link></li>
-              <li><Link to="/work">Work</Link></li>
-              <li><Link to="/blog">Blog</Link></li>
-            </ul>
-          </div>
+      <nav
+        className="nav-extended"
+      >
+        <div className="nav-background">
+          <div className="back" style={{ backgroundImage: `url(${Background})` }} />
         </div>
-      </nav>
+        <div className="nav-wrapper">
+          <Link to="/" className="brand-logo center">
+            <img src={Logo}
+              alt="JodieHag"
+              rel="tooltip"
+              data-html="true"
+              title="<b>JodieHag</b> is a FrontEnd Developer Womb"
+              data-placement="bottom"
+              className="logo-min"
+            />
+          </Link>
+          <a href="#" data-activates="mobile-menu" className="button-collapse">
+            <i className="material-icons">menu</i>
+          </a>
+          <ul id="nav-mobile" className="right hide-on-med-and-down nav navbar-nav navbar-right">
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+          </ul>
+          <ul className="side-nav" id="mobile-menu">
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
+          </ul>
+          {header ?
+            <Header />
+          :
+            null
+          }
+        </div>
+        </nav>
     );
   }
 }

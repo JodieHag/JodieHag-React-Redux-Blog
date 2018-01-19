@@ -1,0 +1,34 @@
+{
+	"data" : [
+		{
+      "name": "ReactJs",
+      "color": "#eefee",
+      "quanty": "90%"
+    },
+    {
+      "name": "Redux",
+      "color": "#eefee",
+      "quanty": "90%"
+    },
+    {
+      "name": "Html5",
+      "color": "#eefee",
+      "quanty": "90%"
+    },
+    {
+      "name": "Css3",
+      "color": "#eefee",
+      "quanty": "90%"
+    },
+    {
+      "name": "Jest",
+      "color": "#eefee",
+      "quanty": "90%"
+    },
+    {
+      "name": "Flexbox",
+      "color": "#eefee",
+      "quanty": "90%"
+    }
+  ]
+}

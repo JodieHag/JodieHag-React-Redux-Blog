@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { LOAD_POSTS,
         ADD_POST,
         GET_POST,

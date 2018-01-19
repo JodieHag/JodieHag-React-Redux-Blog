@@ -1,5 +1,7 @@
-const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 const path = require('path');
 
 const BUILD_DIR = path.resolve(__dirname, './public');
@@ -9,29 +11,34 @@ const config = {
   entry: `${APP_DIR}/index.jsx`,
   output: {
     path: BUILD_DIR,
-    filename: 'main.js'
+    filename: 'main.js',
+    publicPath: '/'
   },
-  plugins: [new CopyWebpackPlugin([
-
-    {
-      from: `${APP_DIR}/index.html`
-    }, {
-      from: `${APP_DIR}/front/js`,
-      to: `${BUILD_DIR}/js`
-    }, {
-      from: `${APP_DIR}/front/img`,
-      to: `${BUILD_DIR}/img`
-    }, {
-      from: `${APP_DIR}/front/vendors`,
-      to: `${BUILD_DIR}/vendors`
-    }, {
-      from: `${APP_DIR}/front/scss/utils/fonts`,
-      to: `${BUILD_DIR}/fonts`
-    }
-  ]),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
+  plugins: [
+    new CleanWebpackPlugin(['public']),
+    new HtmlWebpackPlugin({
+      title: 'JodieHag - FrontEnd Engineer',
+      template: `${APP_DIR}/index.html`,
+      hash: true,
+      inject: 'body'
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: `${APP_DIR}/static/img`,
+        to: `${BUILD_DIR}/img`
+      }, {
+        from: `${APP_DIR}/static/scss/utils/fonts`,
+        to: `${BUILD_DIR}/fonts`
+      },
+      {
+        from: `${APP_DIR}/static/google*.html`,
+        to: `${BUILD_DIR}/`
+      },
+      {
+        from: `${APP_DIR}/static/sitemap.xml`,
+        to: `${BUILD_DIR}/`
+      }
+    ])
   ],
   module: {
     loaders: [
@@ -41,7 +48,7 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['es2015', 'react']
+          presets: ['env', 'react']
         }
       }, {
         test: /\.html$/,
@@ -64,8 +71,8 @@ const config = {
         test: /\.scss/,
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
       }, {
-        test: /\.(png|jpg|gif|woff|woff2)$/,
-        loader: 'url-loader?limit=8192'
+        test: /\.(svg|png|jpg|gif|woff|woff2|ttf|eot)$/,
+        loader: 'base64-inline-loader?limit=1000&name=[name].[ext]'
       }, {
         test: /\.(mp4|ogg|svg)$/,
         loader: 'file-loader'

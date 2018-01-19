@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import { LOGIN_USER, UPDATE_STORE_USER } from '../actions/userActions';
 
 export default function reducer(state = {}, action) {

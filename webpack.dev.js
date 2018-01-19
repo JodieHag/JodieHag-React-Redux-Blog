@@ -1,15 +1,23 @@
+const webpack = require('webpack');
 const Merge = require('webpack-merge');
 const CommonConfig = require('./webpack.common.js');
-const path = require('path');
-
-const BUILD_DIR = path.resolve(__dirname, './public');
 
 module.exports = Merge(CommonConfig, {
-  devtool: 'cheap-module-source-map',
-
-  output: {
-    path: BUILD_DIR,
-    filename: 'main.js',
-    sourceMapFilename: 'main.map'
-  }
+  devtool: 'inline-source-map',
+  devServer: {
+    inline: true,
+    quiet: false,
+    contentBase: './dist',
+    port: 8080,
+    stats: {
+      colors: true
+    },
+    historyApiFallback: true
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('dev'),
+      API_URL: JSON.stringify('http://localhost:3000')
+    })
+  ]
 });
