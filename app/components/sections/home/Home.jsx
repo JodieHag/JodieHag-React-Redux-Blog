@@ -1,7 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Yo from './me.jpg';
 import data from './home.json';
 import Background from '../../../static/img/background.png';
+import Remoto from './remoto.png';
+import Creativa from './creativa.png';
+import Productiva from './productiva.png';
 
 require('./home.scss');
 
@@ -11,6 +15,34 @@ class Home extends React.Component {
     console.log(data);
     return (
       <section className="section section-home">
+        <section className="section section-service">
+          <div className="row valign-wrapper">
+            <div className="col m4">
+              <div className="img-servicios" style={{ backgroundImage: `url(${Remoto})` }} />
+              <div className="section-service__content">
+                <h5 className="center-align title">Remoto</h5>
+                <p className="center-align description">Por norma trabajo en remoto, a veces desde aquí, otras desde allá... ¡Para inicios de proyectos o reuniones importantes acudo a donde haga falta!</p>
+              </div>
+            </div>
+            <div className="col m4">
+              <div className="img-servicios" style={{ backgroundImage: `url(${Creativa})` }} />
+              <div className="section-service__content">
+                <h5 className="center-align title">¿Diseñar? ¿Maquetar? ¿Programar?</h5>
+                <p className="center-align description">¡Todo! Tras más de 6 años de experiencia, diseño, maqueto y programo, aunque mi especialidad es.. ¡El mundo Radioactivo!</p>
+              </div>
+            </div>
+            <div className="col m4">
+              <div className="img-servicios" style={{ backgroundImage: `url(${Productiva})` }} />
+              <div className="section-service__content">
+                <h5 className="center-align title">El tiempo importa</h5>
+                <p className="center-align description">Estimaciones, plazos de entrega, periodos de QA... Todo en esta vida se basa en el tiempo, y el tiempo vuela, me tomo muy enserio mi productividad, optimizar y código de calidad es mi prioridad.</p>
+              </div>
+            </div>
+          </div>
+          <div className="row valign-wrapper" style={{backgroundImage: `url(${Background})`, backgroundColor: 'coral' }}>
+            <Link to="/" className="waves-effect waves-light btn">fsdfds</Link>
+          </div>
+        </section>
         <section className="section section-about">
           <div className="row valign-wrapper">
             <div className="col m4">

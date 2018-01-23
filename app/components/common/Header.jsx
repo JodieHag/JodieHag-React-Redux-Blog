@@ -6,8 +6,8 @@ class Header extends React.Component {
     return (
       <header className="nav-header">
         <div className="brand">
-          <h1>Jodie Hag</h1>
           <h3>FrontEnd Developer Freelance</h3>
+          <h5>Pienso en ReactJs, Redux, Html5, Scss, JSX, ES6, Jest, Git, Gatos, Arboles, Rios, Viento...</h5>
         </div>
       </header>
     );
