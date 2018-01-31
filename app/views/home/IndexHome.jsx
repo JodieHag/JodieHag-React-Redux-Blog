@@ -1,9 +1,11 @@
 import React from 'react';
-import Home from '../../components/sections/home/Home';
+import Services from '../../components/sections/destacados/services/Services';
+import Skills from '../../components/sections/destacados/skills/Skills';
 
 const IndexHome = () => (
   <main className="wrapper">
-    <Home />
+    <Services />
+    <Skills />
   </main>
 );
 

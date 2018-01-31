@@ -71,7 +71,7 @@ const config = {
         test: /\.scss/,
         loader: 'style-loader!css-loader!sass-loader?outputStyle=expanded'
       }, {
-        test: /\.(svg|png|jpg|gif|woff|woff2|ttf|eot)$/,
+        test: /\.(png|jpg|gif|woff|woff2|ttf|eot)$/,
         loader: 'base64-inline-loader?limit=1000&name=[name].[ext]'
       }, {
         test: /\.(mp4|ogg|svg)$/,

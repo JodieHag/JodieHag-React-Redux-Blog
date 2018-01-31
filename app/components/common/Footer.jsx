@@ -44,11 +44,13 @@ class Footer extends React.Component {
         </div>
         }
         <div className="footer-copyright">
-          <div className="container">
-          © 2018 , made with
-           <i className="material-icons">favorite</i>
-           by JodieHag.
-           <ul className="right lista-link">
+          <div className="container row valign-wrapper">
+          <span className="left col m4">
+            © 2018 , made with
+             <i className="material-icons">favorite</i>
+             by JodieHag.
+           </span>
+           <ul className="right lista-link col m8">
              <li>
                <Link to="https://github.com/JodieHag" target="_blank">
                  <i className="fa fa-github fa-2x" />git

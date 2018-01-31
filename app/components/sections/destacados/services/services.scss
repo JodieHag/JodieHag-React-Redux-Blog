@@ -1,0 +1,15 @@
+.section-service {
+  .img-servicios {
+    width: 100%;
+    min-height: 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  &__content {
+    .title {
+      font-family: "surabanglus", Helvetica, Arial;
+    }
+  }
+}

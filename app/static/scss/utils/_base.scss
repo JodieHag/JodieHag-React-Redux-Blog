@@ -10,6 +10,7 @@ html, body {
 
 main {
   flex: 1 0 auto;
+  padding-top: 20px;
 }
 
 .text-white {
@@ -21,4 +22,21 @@ main {
   min-height: 100vh;
   @include flex-direction(column);
   height: 100%;
+
+  .btn{
+    &-home {
+      margin: 50px auto;
+    }
+  }
+
+  footer {
+    &.page-footer {
+      padding-top: 0px;
+
+      span {
+        color: $primary;
+        font-weight: bold;
+      }
+    }
+  }
 }

@@ -1,0 +1,19 @@
+.section-skills {
+  .img-skills {
+    height: 100px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .scale-in {
+    &:hover {
+      animation-name: scaleIn;
+    }
+  }
+
+  @keyframes scaleIn {
+    from {top: 0px;}
+    to {top: 200px;}
+  }
+}
