@@ -27,7 +27,7 @@ class Footer extends React.Component {
             </ul>
           </nav>
           <div className="copyright pull-right">
-            &copy; 2017, made with
+            &copy; 2018, made with
              <i className="material-icons">favorite</i>
              by JodieHag.
            </div>
