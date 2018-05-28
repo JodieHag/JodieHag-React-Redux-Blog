@@ -1,5 +1,10 @@
 {
-  "presets" : ["es2015", "react"],
+  "presets": ["env", "react"],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  },
   "plugins": ["transform-react-jsx", "transform-decorators", "babel-plugin-transform-decorators-legacy",
     "babel-plugin-transform-decorators"]
 }
