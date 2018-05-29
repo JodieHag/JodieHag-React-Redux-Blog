@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';

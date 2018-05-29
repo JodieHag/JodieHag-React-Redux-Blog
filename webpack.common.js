@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
@@ -13,7 +12,6 @@ const config = {
     publicPath: '/'
   },
   plugins: [new CopyWebpackPlugin([
-
     {
       from: `${APP_DIR}/index.html`
     }, {
@@ -29,13 +27,11 @@ const config = {
       from: `${APP_DIR}/front/scss/utils/fonts`,
       to: `${BUILD_DIR}/fonts`
     }
-  ]),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
+    ])
   ],
+  target: 'web',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(js|jsx)$/,
         include: APP_DIR,
@@ -71,8 +67,9 @@ const config = {
         test: /\.(mp4|ogg|svg)$/,
         loader: 'file-loader'
       }, {
+        type: 'javascript/auto',
         test: /\.json$/,
-        include: /node_modules/,
+        exclude: /node_modules/,
         loader: 'json-loader'
       }, {
         test: /\.md/,
@@ -84,7 +81,8 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
+    descriptionFiles: ['package.json']
   }
 };
 

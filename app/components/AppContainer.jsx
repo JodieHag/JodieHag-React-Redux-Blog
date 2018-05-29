@@ -1,7 +1,5 @@
 import React from 'react';
-import Header from './common/Header';
-import Navbar from './common/Navbar';
-import Footer from './common/Footer';
+import Main from '../router/Router';
 
 require('../front/scss/App.scss');
 
@@ -12,14 +10,7 @@ class AppContainer extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <Navbar />
-        <div className="wrapper">
-          <Header />
-            {this.props.children}
-        </div>
-        <Footer />
-      </div>
+      <Main />
     );
   }
 }

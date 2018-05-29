@@ -1,7 +1,7 @@
 import React from 'react';
 import SidebarMenuContainer from './menu/SidebarMenuContainer';
-import AddContainer from './add/AddContainer';
-import UpdateContainer from './update/UpdateContainer';
+// import AddContainer from './add/AddContainer';
+// import UpdateContainer from './update/UpdateContainer';
 
 class Panel extends React.Component {
 
@@ -19,7 +19,7 @@ class Panel extends React.Component {
               />
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-md-12">
               {status.adding ?
                 <AddContainer
@@ -38,7 +38,7 @@ class Panel extends React.Component {
                 </div>
               }
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
