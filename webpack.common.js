@@ -26,8 +26,7 @@ const config = {
     }, {
       from: `${APP_DIR}/front/scss/utils/fonts`,
       to: `${BUILD_DIR}/fonts`
-    }
-    ])
+    }])
   ],
   target: 'web',
   module: {

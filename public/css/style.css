@@ -1,0 +1,196 @@
+/**
+ *
+ * Animations are always a pain to create with all the vendor prefixes and what not.
+ * But with the help of this mixin it will boil down to just a few lines of code.
+ *
+ * @param {*}   $name  - name of animation
+ *
+ *
+ */
+.content {
+  *zoom: 1; }
+  .content:before {
+    content: "";
+    display: table; }
+  .content:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+/* ======================================================================
+	  Fonts Face
+	======================================================================== */
+/**
+ * @type Bool | Color schemes
+ */
+/* ======================================================================
+	  Icons
+	======================================================================== */
+/* ======================================================================
+	  Language menu
+	======================================================================== */
+.lang-menu ul, .options-menu ul {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center; }
+
+.lang-menu li, .options-menu li {
+  display: inline-block;
+  margin: 10px; }
+
+/* ======================================================================
+	Layout
+======================================================================== */
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+header:after {
+  clear: both;
+  content: "";
+  display: table; }
+
+header:before {
+  content: "";
+  display: table; }
+
+body {
+  background-color: #16A085;
+  color: #FFF;
+  font-family: "atlasgr-400", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem; }
+
+.content {
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+  padding: 0 15px; }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+h2 {
+  margin: 0 auto;
+  text-align: center;
+  padding: 60px; }
+
+a {
+  font-family: "atlasgr-700", sans-serif;
+  text-decoration: none;
+  color: #FFF; }
+
+button {
+  background-color: #836aad;
+  border: 0;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 22px;
+  font-size: 1.375rem; }
+
+header {
+  background: #785da6;
+  padding: 0 7%;
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 5px rgba(68, 68, 68, 0.3);
+  perspective: 1555px; }
+
+nav li {
+  position: relative;
+  display: inline-block;
+  float: left; }
+  nav li:hover + .submenu {
+    transform: rotateY(0deg); }
+
+nav .submenu {
+  transform-origin: left top;
+  transform: rotateY(-90deg); }
+  nav .submenu:hover {
+    transform: rotateY(0deg); }
+
+nav a {
+  position: relative;
+  z-index: 599;
+  color: #f5f5f5;
+  background: #785da6;
+  text-decoration: none;
+  display: block;
+  padding: 1.5em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all .2s ease; }
+  nav a i[class*="caret"] {
+    color: #8e77b4;
+    margin-left: .15em; }
+  nav a:hover {
+    color: #00A5E1; }
+  nav a:hover + .submenu {
+    opacity: 1;
+    transform: rotateX(0deg);
+    visibility: visible; }
+
+nav .submenu {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  z-index: 499;
+  width: 14em;
+  top: 100%;
+  left: 0;
+  background: #785da6;
+  box-shadow: 0 2px 5px rgba(68, 68, 68, 0.3);
+  transform-origin: top center;
+  transform: rotateX(-90deg);
+  transition: all .25s ease; }
+  nav .submenu li > .submenu {
+    top: 0;
+    left: 100%; }
+  nav .submenu:hover {
+    opacity: 1;
+    visibility: visible; }
+  nav .submenu li {
+    float: none;
+    display: block; }
+  nav .submenu a {
+    width: 100%;
+    display: block;
+    font-weight: 300;
+    padding: 1.4em 2em; }
+    nav .submenu a:hover {
+      color: #f5f5f5;
+      background: #009cd4; }
+
+/* ======================================================================
+	Home
+======================================================================== */
+.owl-carousel {
+  margin-top: 60px; }
+
+/* ======================================================================
+	Footer
+======================================================================== */
+footer {
+  color: #FFF;
+  background-color: #16A085;
+  text-align: center;
+  position: relative;
+  padding: 10px 15px; }
+  footer.fixing {
+    position: fixed;
+    bottom: 0;
+    width: 100%; }
+    footer.fixing .copy {
+      font-size: 12px;
+      font-size: 0.75rem;
+      margin: 0 0 20px; }
